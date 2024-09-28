@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora de Méritos</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .container {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+      }
+      h1 {
+        text-align: center;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+      label {
+        margin-bottom: 5px;
+      }
+      input {
+        margin-bottom: 10px;
+        padding: 8px;
+        font-size: 16px;
+      }
+      button {
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      h2 {
+        text-align: center;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Calculadora de Méritos</h1>
+      <form method="POST">
+        <label for="formacion">Puntuación en Formación:</label>
+        <input type="text" id="formacion" name="formacion" />
+
+        <label for="experiencia">Puntuación en Experiencia:</label>
+        <input type="text" id="experiencia" name="experiencia" />
+
+        <label for="idiomas">Puntuación en Idiomas:</label>
+        <input type="text" id="idiomas" name="idiomas" />
+
+        <label for="informatica">Puntuación en Informática:</label>
+        <input type="text" id="informatica" name="informatica" />
+
+        <button type="submit">Calcular Total</button>
+      </form>
+
+      {% if resultado %}
+      <h2 style="color: {{ color }};">{{ resultado }}</h2>
+      {% endif %}
+    </div>
+  </body>
+</html>
